@@ -1,0 +1,13 @@
+App\Entity\AbstractDummyA:
+    attributes:
+        a:
+            groups: ['test']
+    discriminator_map:
+        type_property: 'type'
+        mapping:
+            b: 'App\Entity\DummyB'
+
+App\Entity\DummyB:
+    attributes:
+        b:
+            groups: ['test']
