@@ -7,6 +7,7 @@ App\Entity\AbstractDummyA:
         mapping:
             b: 'App\Entity\DummyB'
             c: 'App\Entity\DummyC'
+            d: 'App\Entity\DummyD'
 
 App\Entity\DummyB:
     attributes:
@@ -16,4 +17,11 @@ App\Entity\DummyB:
 App\Entity\DummyC:
     attributes:
         c:
+            groups: ['test']
+
+App\Entity\DummyD:
+    attributes:
+        dummyC:
+            groups: ['test']
+        d:
             groups: ['test']
