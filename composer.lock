@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e9029ad847e5c353cce5b42fd6e515c",
+    "content-hash": "39bee00a575447f3b9be2e46ae924dc7",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1693,16 +1693,16 @@
         },
         {
             "name": "symfony/serializer",
-            "version": "v4.1.1",
+            "version": "4.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/serializer.git",
-                "reference": "2ddc6ec084eba809aec92bf723e007bc3a8345c0"
+                "reference": "45811fd5998dca4034a2f015ae64778adeaf55b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/2ddc6ec084eba809aec92bf723e007bc3a8345c0",
-                "reference": "2ddc6ec084eba809aec92bf723e007bc3a8345c0",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/45811fd5998dca4034a2f015ae64778adeaf55b1",
+                "reference": "45811fd5998dca4034a2f015ae64778adeaf55b1",
                 "shasum": ""
             },
             "require": {
@@ -1769,7 +1769,7 @@
             ],
             "description": "Symfony Serializer Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-22T08:59:39+00:00"
+            "time": "2018-06-29T11:52:46+00:00"
         },
         {
             "name": "symfony/serializer-pack",
@@ -2040,7 +2040,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "symfony/lts": 20
+        "symfony/lts": 20,
+        "symfony/serializer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

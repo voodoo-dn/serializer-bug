@@ -6,8 +6,14 @@ App\Entity\AbstractDummyA:
         type_property: 'type'
         mapping:
             b: 'App\Entity\DummyB'
+            c: 'App\Entity\DummyC'
 
 App\Entity\DummyB:
     attributes:
         b:
+            groups: ['test']
+
+App\Entity\DummyC:
+    attributes:
+        c:
             groups: ['test']

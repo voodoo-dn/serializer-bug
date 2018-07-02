@@ -3,6 +3,7 @@
 namespace Tests;
 
 use App\Entity\AbstractDummyA;
+use App\Entity\DummyC;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata;
@@ -58,5 +59,34 @@ class SerializerTest extends TestCase
 
         $this->assertEquals('a', $dummyB->getA());
         $this->assertEquals('b', $dummyB->getB());
+    }
+
+    public function testExpectsSerializationObjectDummyC(): void
+    {
+        $classMetadataFactory = new ClassMetadataFactory(new YamlFileLoader(__DIR__.'/../src/Resources/config/serializer.yaml'));
+
+        $normalizer = new ObjectNormalizer(
+            $classMetadataFactory,
+            null,
+            null,
+            null,
+            new ClassDiscriminatorFromClassMetadata($classMetadataFactory)
+        );
+
+        $serializer = new Serializer([$normalizer], [new JsonEncoder()]);
+
+        $object = (new DummyC())
+            ->setA('a')
+            ->setC('c')
+        ;
+
+        $data = $serializer->serialize($object, 'json', [
+            'groups' => ['test']
+        ]);
+
+        $this->assertEquals(json_encode([
+            'a' => 'a',
+            'c' => 'c'
+        ]), $data);
     }
 }

@@ -21,9 +21,9 @@ class DummyB extends AbstractDummyA {
 
     /**
      * @param string $b
-     * @return AbstractDummyA
+     * @return self
      */
-    public function setB(string $b): AbstractDummyA
+    public function setB(string $b): self
     {
         $this->b = $b;
         return $this;
